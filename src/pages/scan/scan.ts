@@ -19,7 +19,9 @@ export class ScanPage {
   result: BarcodeScanResult;
   constructor(public navCtrl: NavController, public navParams: NavParams, private bcs: BarcodeScanner, private toastCtrl: ToastController) {
   }
-
+  ionViewWillEnter(){
+    this.scanBarcode();
+  }
   scanBarcode(){
     const options: BarcodeScannerOptions ={
       prompt: 'Pointer votre camera vers un Qr Code',
